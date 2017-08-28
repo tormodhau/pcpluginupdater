@@ -47,6 +47,42 @@
             <scope>runtime</scope>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>${junit.platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -114,6 +150,9 @@
         <jira.version>7.2.2</jira.version>
         <amps.version>6.2.11</amps.version>
         <spring.version>4.3.10.RELEASE</spring.version>
+        <mockito.version>2.8.47</mockito.version>
+        <junit.jupiter.version>5.0.0-M4</junit.jupiter.version>
+        <junit.platform.version>1.0.0-M4</junit.platform.version>
         <atlassian.spring.scanner.version>1.2.13</atlassian.spring.scanner.version>
         <!-- This key is used to keep the consistency between the key in atlassian-plugin.xml and the key to generate bundle. -->
         <atlassian.plugin.key>${project.groupId}.${project.artifactId}</atlassian.plugin.key>
