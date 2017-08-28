@@ -69,7 +69,7 @@
 
                         <!-- Add package to export here -->
                         <Export-Package>
-                            no.resight.powercatch.api,
+                            no.resight.powercatch.pcpluginupdater,
                         </Export-Package>
 
                         <!-- Add package import here -->
