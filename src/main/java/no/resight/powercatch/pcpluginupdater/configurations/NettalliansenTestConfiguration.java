@@ -1,5 +1,6 @@
 package no.resight.powercatch.pcpluginupdater.configurations;
 
+import no.resight.powercatch.pcpluginupdater.constants.Flags;
 import no.resight.powercatch.pcpluginupdater.constants.ScriptLocations;
 import no.resight.powercatch.pcpluginupdater.constants.SpringProfiles;
 import org.postgresql.ds.PGSimpleDataSource;
@@ -8,16 +9,16 @@ import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 
-@Profile(SpringProfiles.ResightTest)
+@Profile(SpringProfiles.NettalliansenTest)
 @Component
-public class ResightTestConfiguration implements DatabaseUpdateConfiguration {
+public class NettalliansenTestConfiguration implements DatabaseUpdateConfiguration {
 
     public String getBaseLineVersion() {
-        return "2.0.0";
+        return Flags.NO_BASELINE;
     }
 
     public String[] getScriptLocations() {
-        return new String[]{ScriptLocations.Common};
+        return new String[]{ScriptLocations.Common, ScriptLocations.Nettalliansen};
     }
 
     public DataSource getDataSource() {

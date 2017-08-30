@@ -8,16 +8,16 @@ import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 
-@Profile(SpringProfiles.ResightTest)
+@Profile(SpringProfiles.SoriaTest)
 @Component
-public class ResightTestConfiguration implements DatabaseUpdateConfiguration {
+public class SoriaTestConfiguration implements DatabaseUpdateConfiguration {
 
     public String getBaseLineVersion() {
         return "2.0.0";
     }
 
     public String[] getScriptLocations() {
-        return new String[]{ScriptLocations.Common};
+        return new String[]{ScriptLocations.Common, ScriptLocations.Soria};
     }
 
     public DataSource getDataSource() {
