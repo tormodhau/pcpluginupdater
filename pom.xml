@@ -162,6 +162,7 @@
                     <verbose>false</verbose>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -170,10 +171,29 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>write-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <outputFile>${project.build.outputDirectory}/runtime.properties</outputFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
     <properties>
+        <springProfile></springProfile>     <!-- springProfile should be set through the maven build command -DspringProfile="profile-name" -->
         <jira.version>7.2.2</jira.version>
         <amps.version>6.2.11</amps.version>
         <spring.version>4.3.10.RELEASE</spring.version>

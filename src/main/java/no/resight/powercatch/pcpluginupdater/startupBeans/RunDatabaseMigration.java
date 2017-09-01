@@ -14,19 +14,19 @@ public class RunDatabaseMigration {
     private static final Logger log = Logger.getLogger(RunDatabaseMigration.class);
 
     @Autowired
-    public RunDatabaseMigration(DatabaseUpdateConfiguration configuration) {
+    public RunDatabaseMigration(DatabaseUpdateConfiguration databaseUpdateConfiguration) {
         Flyway flyway = new Flyway();
-        flyway.setLocations(configuration.getScriptLocations());
-        flyway.setDataSource(configuration.getDataSource());
+        flyway.setLocations(databaseUpdateConfiguration.getScriptLocations());
+        flyway.setDataSource(databaseUpdateConfiguration.getDataSource());
         flyway.setBaselineOnMigrate(true); //If no explicit baseline is set, a schema_version table will be created for empty databases
 
-        if (StringUtil.IsPresent(configuration.getBaseLineVersion())) {
-            log.info("### SETTING BASELINE TO VERSION " + configuration.getBaseLineVersion() +"###");
-            flyway.setBaselineVersion(MigrationVersion.fromVersion(configuration.getBaseLineVersion()));
+        if (StringUtil.IsPresent(databaseUpdateConfiguration.getBaseLineVersion())) {
+            log.info("---- SETTING BASELINE VERSION TO: " + databaseUpdateConfiguration.getBaseLineVersion() +" ----");
+            flyway.setBaselineVersion(MigrationVersion.fromVersion(databaseUpdateConfiguration.getBaseLineVersion()));
             flyway.baseline();
         }
 
-        log.info("### RUNNING DATABASE MIGRATIONS ###");
+        log.info("---- RUNNING DATABASE MIGRATIONS ----");
         flyway.migrate();
     }
 

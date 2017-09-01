@@ -7,11 +7,9 @@
         <param name="plugin-logo">images/update.png</param>
     </plugin-info>
 
-    <!-- add our i18n resource -->
     <resource type="i18n" name="i18n" location="pcpluginupdater"/>
     <resource type="sql" name="dbMigrations/" location="/dbMigrations"/>
 
-    <!-- add our web resources -->
     <web-resource key="pcpluginupdater-resources" name="pcpluginupdater Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
 
@@ -19,5 +17,5 @@
 
         <context>pcpluginupdater</context>
     </web-resource>
-    
+
 </atlassian-plugin>
