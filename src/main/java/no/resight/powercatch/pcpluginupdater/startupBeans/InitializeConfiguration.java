@@ -1,34 +1,24 @@
 package no.resight.powercatch.pcpluginupdater.startupBeans;
 
-import no.resight.powercatch.pcpluginupdater.utilities.PropertiesReaderImpl;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
-import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.core.env.ConfigurableEnvironment;
-import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
-
-
 /**
  * By inheriting BeanFactoryPostProcessor, this class will get initialized prior to all other Spring Beans.
  */
-@Component
-public class InitializeConfiguration implements BeanFactoryPostProcessor {
-
-    @Override
-    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-
-        System.out.println("<<<<<<<<<<<<<<<< postProcessBeanFactory >>>>>>>>>>>>>>>>");
-
-        ConfigurableEnvironment env = beanFactory.getBean(ConfigurableEnvironment.class);
-
-        String springProfile = new PropertiesReaderImpl().getActiveSpringProfile();
-
-        env.setActiveProfiles(springProfile);
-
-        System.out.println("<<<<<<<<<<<<<<<< Active profiles: " + Arrays.toString(env.getActiveProfiles()) + " >>>>>>>>>>>>>>>>");
-    }
+//@Component
+//public class InitializeConfiguration implements BeanFactoryPostProcessor {
+//
+//    @Override
+//    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+//
+//        System.out.println("<<<<<<<<<<<<<<<< postProcessBeanFactory >>>>>>>>>>>>>>>>");
+//
+//        ConfigurableEnvironment env = beanFactory.getBean(ConfigurableEnvironment.class);
+//
+//        String springProfile = new PropertiesReaderImpl().getActiveSpringProfile();
+//
+//        env.setActiveProfiles(springProfile);
+//
+//        System.out.println("<<<<<<<<<<<<<<<< Active profiles: " + Arrays.toString(env.getActiveProfiles()) + " >>>>>>>>>>>>>>>>");
+//    }
 
 //    /**
 //     * Setting a Spring profile makes Spring look for Beans with the @Profile("some-profile")
@@ -39,5 +29,5 @@ public class InitializeConfiguration implements BeanFactoryPostProcessor {
 //
 //        log.error("----- USING SPRING PROFILE: "+ springProfile + "-----");
 //    }
-
-}
+//
+//}
