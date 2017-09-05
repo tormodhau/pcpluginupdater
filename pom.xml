@@ -33,19 +33,19 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.atlassian.plugin</groupId>
-            <artifactId>atlassian-spring-scanner-annotation</artifactId>
-            <version>${atlassian.spring.scanner.version}</version>
-            <scope>compile</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.atlassian.plugin</groupId>-->
+            <!--<artifactId>atlassian-spring-scanner-annotation</artifactId>-->
+            <!--<version>${atlassian.spring.scanner.version}</version>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>com.atlassian.plugin</groupId>
-            <artifactId>atlassian-spring-scanner-runtime</artifactId>
-            <version>${atlassian.spring.scanner.version}</version>
-            <scope>runtime</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.atlassian.plugin</groupId>-->
+            <!--<artifactId>atlassian-spring-scanner-runtime</artifactId>-->
+            <!--<version>${atlassian.spring.scanner.version}</version>-->
+            <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
