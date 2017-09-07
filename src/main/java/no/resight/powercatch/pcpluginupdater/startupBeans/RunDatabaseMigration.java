@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.flywaydb.core.Flyway;
 import org.flywaydb.core.api.MigrationVersion;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,7 +15,7 @@ public class RunDatabaseMigration {
     private static final Logger log = Logger.getLogger(RunDatabaseMigration.class);
 
     @Autowired
-    public RunDatabaseMigration(DatabaseUpdateConfiguration databaseUpdateConfiguration) {
+    public RunDatabaseMigration(DatabaseUpdateConfiguration databaseUpdateConfiguration, Environment environment) {
         Flyway flyway = new Flyway();
         flyway.setLocations(databaseUpdateConfiguration.getScriptLocations());
         flyway.setDataSource(databaseUpdateConfiguration.getDataSource());
