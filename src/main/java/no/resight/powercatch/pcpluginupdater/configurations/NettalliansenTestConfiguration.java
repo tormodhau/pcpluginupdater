@@ -3,6 +3,7 @@ package no.resight.powercatch.pcpluginupdater.configurations;
 import no.resight.powercatch.pcpluginupdater.constants.Flags;
 import no.resight.powercatch.pcpluginupdater.constants.ScriptLocations;
 import no.resight.powercatch.pcpluginupdater.constants.SpringProfiles;
+import org.flywaydb.core.api.MigrationVersion;
 import org.postgresql.ds.PGSimpleDataSource;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,10 @@ public class NettalliansenTestConfiguration implements DatabaseUpdateConfigurati
 
     public String getBaseLineVersion() {
         return Flags.NO_BASELINE;
+    }
+
+    public MigrationVersion getTargetVersion() {
+        return MigrationVersion.LATEST;
     }
 
     public String[] getScriptLocations() {

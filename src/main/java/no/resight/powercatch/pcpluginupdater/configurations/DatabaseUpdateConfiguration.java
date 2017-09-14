@@ -1,5 +1,7 @@
 package no.resight.powercatch.pcpluginupdater.configurations;
 
+import org.flywaydb.core.api.MigrationVersion;
+
 import javax.sql.DataSource;
 
 public interface DatabaseUpdateConfiguration {
@@ -11,6 +13,16 @@ public interface DatabaseUpdateConfiguration {
      * If unset, all migrations will be ran.
      */
     String getBaseLineVersion();
+
+    /**
+     * Gets the target version up to which Flyway should migrate. Migrations with a higher version number will be ignored.
+     * Return values examples:
+     *      MigrationVersion.LATEST                 - Always run the latest scripts
+     *      MigrationVersion.fromVersion("1.2.3")   - Run up to and including version 1.2.3
+     *
+     * @return Object containing the latest script version that the migrations should run.
+     */
+    MigrationVersion getTargetVersion();
 
     /**
      * List of paths in which the SQL migration scripts to be ran is placed.
