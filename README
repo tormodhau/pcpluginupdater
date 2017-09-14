@@ -1,13 +1,6 @@
-You have successfully created an Atlassian Plugin!
+Setting a customer Spring profile:
 
-Here are the SDK commands you'll use immediately:
+Windows:
 
-* atlas-run   -- installs this plugin into the product and starts it on localhost
-* atlas-debug -- same as atlas-run, but allows a debugger to attach at port 5005
-* atlas-cli   -- after atlas-run or atlas-debug, opens a Maven command line window:
-                 - 'pi' reinstalls the plugin into the running product instance
-* atlas-help  -- prints description for all commands in the SDK
-
-Full documentation is always available at:
-
-https://developer.atlassian.com/display/DOCS/Introduction+to+the+Atlassian+Plugin+SDK
+* Add a system environment variable `spring_profiles_active` to the desired profile (such as `na-test`, `soria-test` or `resight-test`)
+* Restart the JIRA Service or JVM/Catalina instance.
