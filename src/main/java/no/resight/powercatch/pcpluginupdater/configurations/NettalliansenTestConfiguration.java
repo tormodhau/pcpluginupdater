@@ -1,6 +1,5 @@
 package no.resight.powercatch.pcpluginupdater.configurations;
 
-import no.resight.powercatch.pcpluginupdater.constants.Flags;
 import no.resight.powercatch.pcpluginupdater.constants.ScriptLocations;
 import no.resight.powercatch.pcpluginupdater.constants.SpringProfiles;
 import org.flywaydb.core.api.MigrationVersion;
@@ -14,8 +13,8 @@ import javax.sql.DataSource;
 @Component
 public class NettalliansenTestConfiguration implements DatabaseUpdateConfiguration {
 
-    public String getBaseLineVersion() {
-        return Flags.NO_BASELINE;
+    public MigrationVersion getBaseLineVersion() {
+        return MigrationVersion.EMPTY;
     }
 
     public MigrationVersion getTargetVersion() {
@@ -30,7 +29,7 @@ public class NettalliansenTestConfiguration implements DatabaseUpdateConfigurati
         PGSimpleDataSource pgSimpleDataSource = new PGSimpleDataSource();
         pgSimpleDataSource.setServerName("localhost");
         pgSimpleDataSource.setPortNumber(5432);
-        pgSimpleDataSource.setDatabaseName("pgtest");
+        pgSimpleDataSource.setDatabaseName("powercatch");
         pgSimpleDataSource.setUser("postgres");
         pgSimpleDataSource.setPassword("postgres123!");
         return pgSimpleDataSource;

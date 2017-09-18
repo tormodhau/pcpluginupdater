@@ -13,8 +13,8 @@ import javax.sql.DataSource;
 @Component
 public class ResightTestConfiguration implements DatabaseUpdateConfiguration {
 
-    public String getBaseLineVersion() {
-        return "2.0.0";
+    public MigrationVersion getBaseLineVersion() {
+        return MigrationVersion.EMPTY;
     }
 
     public MigrationVersion getTargetVersion() {
@@ -29,7 +29,7 @@ public class ResightTestConfiguration implements DatabaseUpdateConfiguration {
         PGSimpleDataSource pgSimpleDataSource = new PGSimpleDataSource();
         pgSimpleDataSource.setServerName("localhost");
         pgSimpleDataSource.setPortNumber(5432);
-        pgSimpleDataSource.setDatabaseName("pgtest");
+        pgSimpleDataSource.setDatabaseName("powercatch");
         pgSimpleDataSource.setUser("postgres");
         pgSimpleDataSource.setPassword("postgres123!");
         return pgSimpleDataSource;
