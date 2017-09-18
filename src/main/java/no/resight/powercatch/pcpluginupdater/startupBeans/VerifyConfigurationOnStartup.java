@@ -1,6 +1,7 @@
 package no.resight.powercatch.pcpluginupdater.startupBeans;
 
 import no.resight.powercatch.pcpluginupdater.Exceptions.UpdaterConfigurationException;
+import no.resight.powercatch.pcpluginupdater.constants.SpringProfiles;
 import no.resight.powercatch.pcpluginupdater.utilities.StringUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.BeansException;
@@ -10,6 +11,7 @@ import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Use this component to verify that required configuration is present on the target instance.
@@ -37,6 +39,11 @@ public class VerifyConfigurationOnStartup implements BeanFactoryPostProcessor {
         Boolean oneOrMoreProfilesAreInvalid = Arrays.stream(profiles).filter(StringUtil::IsNullOrEmpty).count() > 0;
         if (oneOrMoreProfilesAreInvalid) {
             throw new UpdaterConfigurationException("One or more Spring profiles was null or empty. Please set the environment variable 'spring_profiles_active' to an existing customer Spring profile.");
+        }
+
+        Boolean defaultIsTheOnlyActiveProfile = profiles.length == 1 && Objects.equals(profiles[0], SpringProfiles.Default);
+        if (defaultIsTheOnlyActiveProfile) {
+            throw new UpdaterConfigurationException("Only the default spring profile was found, but a customer profile is required. Please set the environment variable 'spring_profiles_active' to a customer Spring profile.");
         }
 
         log.debug("USING SPRING PROFILES: " + Arrays.toString(profiles));

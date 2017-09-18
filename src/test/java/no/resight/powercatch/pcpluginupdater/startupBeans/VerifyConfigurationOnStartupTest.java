@@ -71,8 +71,19 @@ class VerifyConfigurationOnStartupTest {
         // No exception is pass
     }
 
+//    @Test
+//    void GetBaseLineVersion () {
+//        Flyway flyway = new Flyway();
+//        NettalliansenTestConfiguration nettalliansenTestConfiguration = new NettalliansenTestConfiguration();
+//
+//        flyway.setDataSource(nettalliansenTestConfiguration.getDataSource());
+//
+//        flyway.getBaselineVersion();
+//
+//    }
+
     private static Stream<String> failingSpringProfilesSource() {
-        return Stream.of(null, "");
+        return Stream.of(null, "", "default");
     }
 
 }
