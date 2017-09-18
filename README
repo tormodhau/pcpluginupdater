@@ -1,6 +1,27 @@
-Setting a customer Spring profile:
+This plugin will run the following upgrade tasks on install/enable and startup:
 
-Windows:
+* Upgrade the powercatch database to and from the versions set in their respective customer configuration classes
+
+Requirements:
+
+* A customer Spring profile has to be set (more on this below)
+* Flyway will not create an empty database nor user role. These will have to be created prior to running this updater plugin.
+
+Setting a customer Spring profile in Windows:
 
 * Add a system environment variable `spring_profiles_active` to the desired profile (such as `na-test`, `soria-test` or `resight-test`)
 * Restart the JIRA Service or JVM/Catalina instance.
+
+
+About Flyway Target and Baseline versions:
+
+* One may select the Baseline and Target versions for any given customer.
+* For existing databases that previously hasn't been provisioned using Flyway, you should set the Baseline version to match the current state of the database. All scripts with versions higher than the given Baseline version will be ran. After it's initial run, the Baseline should not be changed.
+* For customers that shouldn't be upgraded to the latest version, you may set a Target version. Scripts up to and including the targeted version will be ran.
+* To run all migrations for an empty database, you may set the Baseline to MigrationVersion.Empty, and Target to  MigrationVersion.Latest.
+* Attempting to set or change a Baseline on a database that already has a schema_version table will fail. If a new Baseline has to be made, delete the schema_version table before running the Baseline. If the Baseline has been changed by accident, set it back to the same version as found in the schema_version table or simple set it to MigrationVersion.Empty.
+
+Error handling:
+
+* If no Spring profile is explicitly set, the upgrade tasks should fail automatically without any changes taking place.
+* If an SQL script throws an error, Flyway will roll back the failed script and stop all progress. Any script changes that prior to the failure will persist.
