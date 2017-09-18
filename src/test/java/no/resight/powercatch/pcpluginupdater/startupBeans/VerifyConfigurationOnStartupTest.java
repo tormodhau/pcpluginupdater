@@ -1,6 +1,6 @@
 package no.resight.powercatch.pcpluginupdater.startupBeans;
 
-import no.resight.powercatch.pcpluginupdater.Exceptions.UpdaterConfigurationException;
+import no.resight.powercatch.pcpluginupdater.exceptions.UpdaterConfigurationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -38,6 +38,10 @@ class VerifyConfigurationOnStartupTest {
         });
     }
 
+    private static Stream<String> failingSpringProfilesSource() {
+        return Stream.of(null, "", "default");
+    }
+
     @Test
     void SpringActiveProfile_whenReturnsEmptyArray_shouldFail () {
         String[] profiles = new String[]{};
@@ -71,19 +75,5 @@ class VerifyConfigurationOnStartupTest {
         // No exception is pass
     }
 
-//    @Test
-//    void GetBaseLineVersion () {
-//        Flyway flyway = new Flyway();
-//        NettalliansenTestConfiguration nettalliansenTestConfiguration = new NettalliansenTestConfiguration();
-//
-//        flyway.setDataSource(nettalliansenTestConfiguration.getDataSource());
-//
-//        flyway.getBaselineVersion();
-//
-//    }
-
-    private static Stream<String> failingSpringProfilesSource() {
-        return Stream.of(null, "", "default");
-    }
 
 }

@@ -1,4 +1,4 @@
-package no.resight.powercatch.pcpluginupdater.Exceptions;
+package no.resight.powercatch.pcpluginupdater.exceptions;
 
 public class UpdaterConfigurationException extends RuntimeException {
     public UpdaterConfigurationException(String message) {

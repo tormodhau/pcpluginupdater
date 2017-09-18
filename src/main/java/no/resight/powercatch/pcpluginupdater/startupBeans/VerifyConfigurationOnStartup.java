@@ -1,6 +1,6 @@
 package no.resight.powercatch.pcpluginupdater.startupBeans;
 
-import no.resight.powercatch.pcpluginupdater.Exceptions.UpdaterConfigurationException;
+import no.resight.powercatch.pcpluginupdater.exceptions.UpdaterConfigurationException;
 import no.resight.powercatch.pcpluginupdater.constants.SpringProfiles;
 import no.resight.powercatch.pcpluginupdater.utilities.StringUtil;
 import org.apache.log4j.Logger;
