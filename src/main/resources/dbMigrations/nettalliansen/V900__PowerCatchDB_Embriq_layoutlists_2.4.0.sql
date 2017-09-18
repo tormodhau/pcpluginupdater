@@ -102,7 +102,6 @@ INSERT INTO konfigurasjon.issuetype (id, name, project_key, new_issue_enabled, s
 INSERT INTO konfigurasjon.issuetype (id, name, project_key, new_issue_enabled, summary_field, changed_by) VALUES ('65f9942c-5a39-4668-93e7-3de4c87da209','PC_ISSUETYPE_ROLLOUT_METER_CHANGE', 'PPEN', 0, 'summary', 'PowerCatch Update Script');
 
 
-INSERT INTO konfigurasjon.field (id, nbr, name, customfieldid, changed_by) VALUES ('683e847a-4f12-4b8b-ab5a-31130fd8a8a6', NULL, 'PC_BOOKING_ORDER', NULL, 'PowerCatch Update Script');
 INSERT INTO konfigurasjon.fieldproperty (id, label, editable, required, checkboxvalidationid, id_field, changed_by) VALUES ('d963c52b-3079-4ac5-a3ab-8ead9c472546', '', 0, 0, NULL, '683e847a-4f12-4b8b-ab5a-31130fd8a8a6', 'PowerCatch Update Script'); -- PC_BOOKING_ORDER-properties
 
 

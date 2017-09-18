@@ -101,7 +101,6 @@ delete from konfigurasjon.issuetype_page where id = '7ae85b73-e0d2-4977-a761-25c
 -- Insert new meter replacement issuetype for test
 INSERT INTO konfigurasjon.issuetype (id, name, project_key, new_issue_enabled, summary_field, changed_by) VALUES ('42de41da-2012-441b-9cce-8c7e3126b8ed','PC_ISSUETYPE_METER_REPLACEMENT', 'TEST', 0, 'summary', 'PowerCatch Update Script');
 
-INSERT INTO konfigurasjon.field (id, nbr, name, customfieldid, changed_by) VALUES ('683e847a-4f12-4b8b-ab5a-31130fd8a8a6', NULL, 'PC_BOOKING_ORDER', NULL, 'PowerCatch Update Script');
 INSERT INTO konfigurasjon.fieldproperty (id, label, editable, required, checkboxvalidationid, id_field, changed_by) VALUES ('d963c52b-3079-4ac5-a3ab-8ead9c472546', '', 0, 0, NULL, '683e847a-4f12-4b8b-ab5a-31130fd8a8a6', 'PowerCatch Update Script'); -- PC_BOOKING_ORDER-properties
 
 -- Generert
