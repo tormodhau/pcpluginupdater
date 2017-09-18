@@ -1,4 +1,3 @@
-\connect powercatch
 
 -- PC-3154 Layoutlist sqlscript creation
 CREATE TABLE IF NOT EXISTS konfigurasjon.sqllog

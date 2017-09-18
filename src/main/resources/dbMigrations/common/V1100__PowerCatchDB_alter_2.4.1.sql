@@ -1,5 +1,3 @@
-\connect powercatch
-
 
 ALTER TABLE konfigurasjon.page ADD column show_camera_on_page integer DEFAULT 0;
 

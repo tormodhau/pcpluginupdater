@@ -1,6 +1,5 @@
 
 -- New table for risk-analysis (used by Table Grid Editor in project NETT)
-\connect powercatch
 
 CREATE TABLE IF NOT EXISTS netbas.task_group_info
 (

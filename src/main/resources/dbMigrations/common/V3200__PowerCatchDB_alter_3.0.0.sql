@@ -1,4 +1,3 @@
-\connect powercatch
 
 -- delete old equipment schema, tables, functions etc. 
 DO

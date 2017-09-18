@@ -1,5 +1,3 @@
-\connect powercatch
-
 
 ALTER TABLE konfigurasjon.fieldproperty ADD column scannable  integer DEFAULT 0;
 ALTER TABLE konfigurasjon.fieldproperty ADD column hide_values  integer DEFAULT 0;
@@ -108,7 +106,7 @@ begin
 	CASE
 	WHEN l.spenning=132 THEN 'Regionalnett'
 	WHEN m.variant='HENGEKABEL' OR m.variant='JordkabelLSP' OR m.variant='LuftledningLSP' OR m.variant='KABEL' THEN 'Lavspenningsnett'
-	ELSE 'Høyspenningsnett'
+	ELSE 'Hï¿½yspenningsnett'
 	END
 	AS variantSpenning
 	from infrastruktur.mastepunkt m INNER JOIN infrastruktur.linje l ON m.id_linje = l.id ORDER BY short_id, posisjon

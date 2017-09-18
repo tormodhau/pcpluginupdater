@@ -1,4 +1,3 @@
-\connect powercatch
 
 -- Changed return value of fieldproperty.id
 CREATE OR REPLACE FUNCTION konfigurasjon."getAllLayouts"()

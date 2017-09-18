@@ -4,10 +4,8 @@ SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 
-\connect powercatch
 
-
--- PC-3329 Markering av viktig informasjon på arbeidsordre
+-- PC-3329 Markering av viktig informasjon pï¿½ arbeidsordre
 --   Legger til skjult felt PC_IMPORTANT_INFO
 -- Insert new fields
 INSERT INTO konfigurasjon.field (id, nbr, name, customfieldid, changed_by) VALUES ('edc14f8d-ef20-9600-251c-2cd5e6ef18c5', NULL, 'PC_IMPORTANT_INFO', NULL, 'PowerCatch Update Script 2.4.4');

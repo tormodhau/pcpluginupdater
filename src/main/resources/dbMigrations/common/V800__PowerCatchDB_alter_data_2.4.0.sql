@@ -4,9 +4,6 @@ SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 
-\connect powercatch
-
-
 INSERT INTO konfigurasjon.config_server_values (id, key, value, changed_by, reference_element, company_key, deleted) VALUES (88, 'mobileclient_autosync_on_complete', 'false', 'admin', NULL, 'powercatch', 0);
 
 -- This value should always be the same as the last id we insert manually
@@ -32,7 +29,7 @@ INSERT INTO konfigurasjon.field (id, nbr, name, customfieldid, changed_by) VALUE
 
 -- Insert field property for new fields
 INSERT INTO konfigurasjon.fieldproperty (id, label, editable, required, checkboxvalidationid, id_field, changed_by) VALUES ('93bc6821-7f29-4f5b-b987-26830d6a18f8', '', 0, NULL, NULL, '7b3483b4-d84f-42ec-bba8-4a06ee0869af', 'PowerCatch Update Script'); -- PC_INSTALLATION_STREET_NO-properties
-INSERT INTO konfigurasjon.fieldproperty (id, label, editable, required, checkboxvalidationid, id_field, changed_by, scannable, hide_values, cross_validation) VALUES ('cb9e039e-a1f9-49aa-afe6-aba86fe968d9', '', 1, 1, NULL, 'e4aad805-6426-46fa-841a-3579ad637109', 'PowerCatch Update Script', 1,1,1); -- PC_METER_NUMBER-properties (Ny målers målernummer)
+INSERT INTO konfigurasjon.fieldproperty (id, label, editable, required, checkboxvalidationid, id_field, changed_by, scannable, hide_values, cross_validation) VALUES ('cb9e039e-a1f9-49aa-afe6-aba86fe968d9', '', 1, 1, NULL, 'e4aad805-6426-46fa-841a-3579ad637109', 'PowerCatch Update Script', 1,1,1); -- PC_METER_NUMBER-properties (Ny mï¿½lers mï¿½lernummer)
 INSERT INTO konfigurasjon.fieldproperty (id, label, editable, required, checkboxvalidationid, id_field, changed_by, scannable, hide_values, cross_validation) VALUES ('9fb374c7-da6c-49f9-9147-c356625cb418', '', 1, 1, NULL, '7d8c04ab-dad6-43e2-affe-eb25478c5422', 'PowerCatch Update Script', 1,1,1); -- PC_OLD_METER_READING-properties
 INSERT INTO konfigurasjon.fieldproperty (id, label, editable, required, checkboxvalidationid, id_field, changed_by) VALUES ('a7fdcba9-f57f-45ef-8903-ee2229d35b7f', '', 1, 1, NULL, 'd4437ec5-01d4-4f7a-a3e9-aef3f45cc631', 'PowerCatch Update Script'); -- PC_REGISTERED_VOLTAGE2-properties
 INSERT INTO konfigurasjon.fieldproperty (id, label, editable, required, checkboxvalidationid, id_field, changed_by) VALUES ('d963c52b-3079-4ac5-a3ab-8ead9c472546', '', 0, 0, NULL, '683e847a-4f12-4b8b-ab5a-31130fd8a8a6', 'PowerCatch Update Script'); -- PC_BOOKING_ORDER-properties
@@ -55,7 +52,7 @@ INSERT INTO konfigurasjon.page_fieldproperty (id, id_page, id_fieldproperty, sor
 INSERT INTO konfigurasjon.page_fieldproperty (id, id_page, id_fieldproperty, sortorder, changed_by) VALUES ('b425f53e-e1e8-449d-9784-d916b857fb52', '3acc5fd5-602e-48f2-aedd-0440491fbcfb', '84e10dc1-9463-400d-8614-d947ca066e13', 3, 'PowerCatch Update Script'); -- PC_INSTALLATION_ZIPCODE-properties on page
 INSERT INTO konfigurasjon.page_fieldproperty (id, id_page, id_fieldproperty, sortorder, changed_by) VALUES ('d82d1673-2ab4-4ae7-9e35-5012fdd776d1', '3acc5fd5-602e-48f2-aedd-0440491fbcfb', '51d7ece3-cec1-4444-93c1-cd7d7ecfb5ef', 4, 'PowerCatch Update Script'); -- PC_INSTALLATION_CITY-properties on page
 
--- FERDIG field on page-- page målerdata
+-- FERDIG field on page-- page mï¿½lerdata
 INSERT INTO konfigurasjon.page_fieldproperty (id, id_page, id_fieldproperty, sortorder, changed_by) VALUES ('f51f5db8-02e6-4710-b4a5-f9b148eab159', 'a998c50a-21f4-4c8d-895f-2b524f6d8e82', '97594e2d-e0ab-4338-ac33-a8bcacf2f26c', 1, 'PowerCatch Update Script'); -- PC_METER_ID-properties on page
 INSERT INTO konfigurasjon.page_fieldproperty (id, id_page, id_fieldproperty, sortorder, changed_by) VALUES ('68b50e5c-2cf1-4165-9d2d-5c7faddf26f1', 'a998c50a-21f4-4c8d-895f-2b524f6d8e82', '9fb374c7-da6c-49f9-9147-c356625cb418', 2, 'PowerCatch Update Script'); -- PC_OLD_METER_READING-properties on page
 INSERT INTO konfigurasjon.page_fieldproperty (id, id_page, id_fieldproperty, sortorder, changed_by) VALUES ('4d2d79b6-ba95-4c18-a72f-6a14500e5e7d', 'a998c50a-21f4-4c8d-895f-2b524f6d8e82', 'cac3b0be-b8a3-4713-ba46-d64381151ea7', 3, 'PowerCatch Update Script'); -- PC_NEW_METER_TYPE-properties on page

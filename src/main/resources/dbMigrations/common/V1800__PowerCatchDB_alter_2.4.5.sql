@@ -1,4 +1,3 @@
-\connect powercatch
 
 -- New table for errorlogging.
 CREATE TABLE IF NOT EXISTS prosjekt.errorlogs
